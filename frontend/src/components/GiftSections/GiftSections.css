@@ -1,0 +1,107 @@
+.gift-sections {
+  padding: 4rem 2rem;
+  background-color: #fff8f0;
+}
+
+.gift-sections-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.gift-sections-header h2 {
+  font-size: 2.5rem;
+  color: #8B4513;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.gift-sections-header p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.gift-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gift-section-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.gift-section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gift-section-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1.5rem;
+}
+
+.gift-section-content {
+  flex: 1;
+}
+
+.gift-section-content h3 {
+  color: #8B4513;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.gift-section-content p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .gift-sections-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gift-sections {
+    padding: 2rem 1rem;
+  }
+
+  .gift-section-card {
+    padding: 1rem;
+  }
+
+  .gift-section-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+  }
+
+  .gift-section-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .gift-section-content p {
+    font-size: 0.9rem;
+  }
+} 

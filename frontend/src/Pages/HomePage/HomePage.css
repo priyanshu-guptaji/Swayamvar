@@ -1,0 +1,122 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.section-spacing {
+  padding: 6rem 0;
+}
+
+.section-spacing:first-child {
+  padding-top: 0;
+}
+
+.section-spacing:last-child {
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 4rem 0;
+  }
+}
+
+.hover-area {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 50px; /* Increased width */
+  height: 100px; /* Increased height */
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: -150px; /* Initially hidden */
+  width: 150px; /* Reduced width */
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  color: white;
+  transition: right 0.5s ease; /* Slower transition */
+  z-index: 999; /* Ensure it is above other elements */
+  transform: translateY(-50%);
+}
+
+.hover-area:hover + .sidebar,
+.sidebar:hover {
+  right: 0; /* Slide out on hover */
+}
+
+.calendar-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+    margin: 20px 20px 80px 20px; /* Further increased bottom margin */
+}
+
+.weather-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 20px; /* Adjusted margin */
+}
+
+.calendar-container {
+  display: none; /* Initially hidden */
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar:hover .calendar-container {
+  display: block; /* Show the calendar on hover */
+}
+
+.calendar-container .react-calendar {
+  width: 100%;
+  border: none;
+}
+
+.modal {
+  display: block; /* Ensure the modal is displayed */
+  position: fixed;
+  z-index: 1000;
+  right: 0; /* Position to the right */
+  top: 0;
+  width: 30%; /* Adjust width as needed */
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Adjust margin as needed */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Adjust width as needed */
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

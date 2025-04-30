@@ -1,20 +1,26 @@
-const express = require("express")
-const { HandlingNotFound } = require("./middlewares/Handling404.middleware")
-const ApiError = require("./utils/ApiError")
-const app = express()
+const express = require("express");
+const errorHandler = require("./middlewares/Handling404.middleware");
+const ApiError = require("./utils/ApiError");
+const app = express();
+const morgan = require("morgan");
+const cors = require("cors");
 
+// middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cors());
+app.use(morgan("dev"));
 
-//routes
-app.use("/api",require("./routes"))
+// routes
+app.use("/api/v1", require("./routes"));
 
+// 404 handler
+app.use((req, res, next) => {
+  next(new ApiError(404, `Route ${req.originalUrl} not found`));
+});
 
-//404 page
-app.use("*", ()=> {
-    throw new ApiError(404,"Page not found");
-    
-})
+// Error handling middleware - should be last
+app.use(errorHandler);
 
-app.use(HandlingNotFound)
-
-//server
-module.exports = app
+// server
+module.exports = app;

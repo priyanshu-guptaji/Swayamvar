@@ -1,12 +1,16 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-exports.ConnectDB = async() => {
-    try{
-        await mongoose.connect("mongodb+srv://WedToMe:4JJjMK8N2xa99lpg@cluster0.u9013.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-        console.log(`The db is connect with ${mongoose.connection.host}`);
+exports.ConnectDB = async () => {
+    try {
+        const dbURI = process.env.MONGO_URI;
+        if (!dbURI) {
+            throw new Error("MONGO_URI is not defined in the environment variables");
+        }
+        await mongoose.connect(dbURI);
+        console.log(`The db is connected with ${mongoose.connection.host}`);
+    } catch (error) {
+        console.error('Database connection error:', error);
+        mongoose.disconnect();
+        process.exit(1);
     }
-    catch(error){
-        mongoose.disconnect()
-        process.exit(1)
-    }
-}
+};
