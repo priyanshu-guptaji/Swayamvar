@@ -17,9 +17,9 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name].[ext]'
-      }
+      // output: {
+      //   assetFileNames: 'assets/[name].[ext]'
+      // }
     }
   },
   server: {

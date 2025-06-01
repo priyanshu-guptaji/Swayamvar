@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: swayamvar-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: MONGODB_URI
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false 
