@@ -1,4 +1,13 @@
 {
+  "name": "swayamvar",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "install-all": "npm install && cd frontend && npm install"
+  },
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "axios": "^1.8.4",
